@@ -1,10 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 210 40% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -13,16 +17,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 210 100% 38.8%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 187 63% 47.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 42 82% 50%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -35,19 +39,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -61,16 +58,16 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 210 100% 38.8%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 187 63% 47.1%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 42 82% 50%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -96,6 +93,59 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-persian-light text-persian-gray font-nunito;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+  
+  .section-heading {
+    @apply text-3xl font-bold text-persian-navy mb-8 relative inline-block;
+  }
+  
+  .section-heading::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-1/2 h-1 bg-persian-turquoise rounded-full mt-2;
+  }
+
+  .persian-border-pattern {
+    @apply relative rounded-lg overflow-hidden;
+  }
+  
+  .persian-border-pattern::before {
+    content: '';
+    @apply absolute inset-0 border-2 border-persian-gold/20 rounded-lg;
+    mask-image: repeating-linear-gradient(45deg, transparent, transparent 5px, black 5px, black 10px);
+  }
+
+  .tech-tag {
+    @apply inline-block px-3 py-1 rounded-full text-xs font-medium bg-persian-blue/10 text-persian-blue mr-2 mb-2 transition-all hover:bg-persian-blue/20;
+  }
+
+  .page-section {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+
+  .contact-input {
+    @apply w-full px-4 py-3 border border-persian-navy/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-persian-turquoise bg-white/70 backdrop-blur-sm transition-all duration-300;
+  }
+
+  .project-link {
+    @apply px-4 py-2 rounded-md inline-flex items-center justify-center gap-2 font-medium transition-all duration-300;
+  }
+
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+  
+  .animate-on-scroll.show {
+    @apply opacity-100 translate-y-0;
   }
 }

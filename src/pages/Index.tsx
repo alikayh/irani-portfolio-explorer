@@ -1,12 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useEffect } from 'react';
+import Header from '@/components/Header';
+import Projects from '@/components/Projects';
+import Skills from '@/components/Skills';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  useEffect(() => {
+    // Animation for elements when they enter viewport
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+
+    return () => {
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.unobserve(el);
+      });
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen w-full overflow-x-hidden">
+      <Header />
+      <Projects />
+      <Skills />
+      <Contact />
+      <Footer />
     </div>
   );
 };
