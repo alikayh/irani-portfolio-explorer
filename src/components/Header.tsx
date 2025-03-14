@@ -126,7 +126,7 @@ const Header = () => {
                 <span className="font-vazir">توسعه‌دهنده فول‌استک</span>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-persian-navy mb-6 font-vazir leading-tight animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                خلق تجربه‌های دیجیتال <br />
+                علی برادر خدام خسروشاهی <br />
                 <span className="text-persian-turquoise">خلاقانه و کاربردی</span>
               </h1>
               <p className="text-persian-gray/80 text-lg mb-8 max-w-xl font-vazir leading-relaxed animate-fade-in" style={{ animationDelay: '0.7s' }}>
@@ -169,8 +169,8 @@ const Header = () => {
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-persian-blue to-persian-turquoise animate-spin-slow opacity-20"></div>
                 <div className="absolute inset-3 rounded-full bg-white overflow-hidden persian-border-pattern">
                   <img
-                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2574&auto=format&fit=crop"
-                    alt="Profile"
+                    src="https://rashay.ir/data/avatars/m/0/8.jpg?1741602862"
+                    alt="علی برادر خدام خسروشاهی"
                     className="w-full h-full object-cover rounded-full p-1"
                   />
                 </div>
