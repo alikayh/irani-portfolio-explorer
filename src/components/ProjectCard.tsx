@@ -71,6 +71,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
               target="_blank" 
               rel="noopener noreferrer"
               className="project-link bg-persian-blue/10 text-persian-blue hover:bg-persian-blue/20"
+              onClick={(e) => e.stopPropagation()}
             >
               <Github size={18} />
               <span className="font-vazir">کد منبع</span>
@@ -80,6 +81,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
               target="_blank" 
               rel="noopener noreferrer"
               className="project-link bg-persian-navy text-white hover:bg-persian-navy/90"
+              onClick={(e) => e.stopPropagation()}
             >
               <ExternalLink size={18} />
               <span className="font-vazir">نمایش پروژه</span>

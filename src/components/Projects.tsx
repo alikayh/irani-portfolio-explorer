@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { projects } from '@/lib/data';
 import ProjectCard from './ProjectCard';
@@ -84,6 +85,7 @@ const Projects = () => {
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-persian-blue hover:text-persian-blue/80 text-sm font-vazir"
+                        onClick={(e) => e.stopPropagation()}
                       >
                         کد منبع
                       </a>
@@ -92,6 +94,7 @@ const Projects = () => {
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-persian-navy hover:text-persian-navy/80 text-sm font-vazir"
+                        onClick={(e) => e.stopPropagation()}
                       >
                         نمایش
                       </a>
