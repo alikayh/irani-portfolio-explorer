@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { projects } from '@/lib/data';
 import ProjectCard from './ProjectCard';
@@ -23,7 +22,7 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="mb-20">
+        <div className="mb-20 text-right">
           <h3 className="text-2xl font-bold text-persian-navy mb-10 font-vazir text-right">
             پروژه‌های ویژه
           </h3>
@@ -39,7 +38,7 @@ const Projects = () => {
         </div>
 
         {otherProjects.length > 0 && (
-          <div>
+          <div className="text-right">
             <h3 className="text-2xl font-bold text-persian-navy mb-10 font-vazir text-right">
               سایر پروژه‌ها
             </h3>
@@ -60,7 +59,7 @@ const Projects = () => {
                     />
                   </div>
                   
-                  <div className="p-6">
+                  <div className="p-6 text-right">
                     <h4 className="text-xl font-bold text-persian-navy mb-2 font-vazir">{project.title}</h4>
                     <p className="text-persian-gray/80 mb-4 text-sm font-vazir text-right line-clamp-2">
                       {project.description}
