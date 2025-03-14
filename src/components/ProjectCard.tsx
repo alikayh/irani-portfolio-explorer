@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Project } from '@/lib/data';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { HoverCard, HoverCardTrigger, HoverCardContent } from './ui/hover-card';
 
 interface ProjectCardProps {
   project: Project;
@@ -17,7 +18,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
     <div 
       className={cn(
         "glass-card relative rounded-xl overflow-hidden transition-all duration-500 mb-16",
-        isHovered ? "transform scale-[1.02] shadow-xl" : "shadow-md",
+        isHovered ? "shadow-xl" : "shadow-md",
         "animate-on-scroll"
       )}
       onMouseEnter={() => setIsHovered(true)}
@@ -91,7 +92,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       </div>
       
       {/* Persian pattern border */}
-      <div className="absolute inset-0 persian-border-pattern opacity-40"></div>
+      <div className="absolute inset-0 persian-border-pattern opacity-40 pointer-events-none"></div>
     </div>
   );
 };

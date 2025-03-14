@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Projects from '@/components/Projects';
@@ -13,6 +12,9 @@ const Index = () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('show');
+          // Keep the element visible after it has been shown
+          // This prevents the element from disappearing if it leaves the viewport
+          observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.1 });
