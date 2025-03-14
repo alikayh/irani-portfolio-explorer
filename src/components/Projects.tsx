@@ -2,6 +2,7 @@
 import React from 'react';
 import { projects } from '@/lib/data';
 import ProjectCard from './ProjectCard';
+import { Card, CardContent } from './ui/card';
 
 const Projects = () => {
   const featuredProjects = projects.filter(project => project.featured);
@@ -37,69 +38,71 @@ const Projects = () => {
           </div>
         </div>
 
-        <div>
-          <h3 className="text-2xl font-bold text-persian-navy mb-10 font-vazir text-right">
-            سایر پروژه‌ها
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {otherProjects.map((project, index) => (
-              <div 
-                key={project.id}
-                className="glass-card rounded-xl overflow-hidden transition-all duration-500 hover:shadow-lg animate-on-scroll"
-                style={{ 
-                  transitionDelay: `${index * 100}ms`,
-                }}
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-all duration-500 hover:scale-110"
-                  />
-                </div>
-                
-                <div className="p-6">
-                  <h4 className="text-xl font-bold text-persian-navy mb-2 font-vazir">{project.title}</h4>
-                  <p className="text-persian-gray/80 mb-4 text-sm font-vazir text-right line-clamp-2">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap justify-end mb-4">
-                    {project.technologies.slice(0, 3).map((tech) => (
-                      <span key={tech} className="tech-tag font-vazir text-xs">
-                        {tech}
-                      </span>
-                    ))}
-                    {project.technologies.length > 3 && (
-                      <span className="tech-tag font-vazir text-xs">
-                        +{project.technologies.length - 3}
-                      </span>
-                    )}
+        {otherProjects.length > 0 && (
+          <div>
+            <h3 className="text-2xl font-bold text-persian-navy mb-10 font-vazir text-right">
+              سایر پروژه‌ها
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {otherProjects.map((project, index) => (
+                <div 
+                  key={project.id}
+                  className="glass-card rounded-xl overflow-hidden transition-all duration-500 hover:shadow-lg animate-on-scroll"
+                  style={{ 
+                    transitionDelay: `${index * 100}ms`,
+                  }}
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-all duration-500 hover:scale-110"
+                    />
                   </div>
                   
-                  <div className="flex justify-end gap-3">
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-persian-blue hover:text-persian-blue/80 text-sm font-vazir"
-                    >
-                      کد منبع
-                    </a>
-                    <a 
-                      href={project.liveDemo} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-persian-navy hover:text-persian-navy/80 text-sm font-vazir"
-                    >
-                      نمایش
-                    </a>
+                  <div className="p-6">
+                    <h4 className="text-xl font-bold text-persian-navy mb-2 font-vazir">{project.title}</h4>
+                    <p className="text-persian-gray/80 mb-4 text-sm font-vazir text-right line-clamp-2">
+                      {project.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap justify-end mb-4">
+                      {project.technologies.slice(0, 3).map((tech) => (
+                        <span key={tech} className="tech-tag font-vazir text-xs">
+                          {tech}
+                        </span>
+                      ))}
+                      {project.technologies.length > 3 && (
+                        <span className="tech-tag font-vazir text-xs">
+                          +{project.technologies.length - 3}
+                        </span>
+                      )}
+                    </div>
+                    
+                    <div className="flex justify-end gap-3">
+                      <a 
+                        href={project.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-persian-blue hover:text-persian-blue/80 text-sm font-vazir"
+                      >
+                        کد منبع
+                      </a>
+                      <a 
+                        href={project.liveDemo} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-persian-navy hover:text-persian-navy/80 text-sm font-vazir"
+                      >
+                        نمایش
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
