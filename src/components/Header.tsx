@@ -154,7 +154,7 @@ const Header = () => {
                 <a href="#" className="text-persian-gray/70 hover:text-persian-navy transition-colors">
                   <Github size={22} />
                 </a>
-                <a href="#" className="text-persian-gray/70 hover:text-persian-navy transition-colors">
+                <a href="https://www.linkedin.com/in/ali-khosroshahi-0b0759246/" className="text-persian-gray/70 hover:text-persian-navy transition-colors">
                   <Linkedin size={22} />
                 </a>
                 <a href="#" className="text-persian-gray/70 hover:text-persian-navy transition-colors">

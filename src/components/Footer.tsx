@@ -25,7 +25,7 @@ const Footer = () => {
             <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
               <Github size={20} />
             </a>
-            <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+            <a href="https://www.linkedin.com/in/ali-khosroshahi-0b0759246/" className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
               <Linkedin size={20} />
             </a>
             <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
